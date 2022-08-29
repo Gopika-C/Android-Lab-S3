@@ -1,4 +1,4 @@
-package com.example.linearloginevaluation;
+package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,37 +9,60 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    EditText number1;
+    EditText number2;
+    Button b1;
+    Button b2;
+    Button b3;
+    Button b4;
+    float sol=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText user,pass;
-        Button submit,reset;
-
-        user=(EditText)findViewById(R.id.e1);
-        pass=(EditText)findViewById(R.id.e2);
-
-        submit=(Button) findViewById(R.id.button);
-        reset=(Button) findViewById(R.id.button2);
-        submit.setOnClickListener(new View.OnClickListener() {
+        number1=findViewById(R.id.et1);
+        number2=findViewById(R.id.et2);
+        b1=findViewById(R.id.b11);
+        b2=findViewById(R.id.b12);
+        b3=findViewById(R.id.b13);
+        b4=findViewById(R.id.b14);
+        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user.getText().toString().equals("admin") &&
-                        pass.getText().toString().equals("admin")) {
-                    Toast.makeText(getApplicationContext(), "Login Successfull", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Login Unsuccessfull", Toast.LENGTH_SHORT).show();
-                }
+                float a = Float.parseFloat(number1.getText().toString());
+                float b = Float.parseFloat(number2.getText().toString());
+                sol=a+b;
+                Toast.makeText(MainActivity.this, "Sum="+sol, Toast.LENGTH_SHORT).show();
             }
         });
-        reset.setOnClickListener(new View.OnClickListener() {
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                user.setText((" "));
-                pass.setText(" ");
+                float a = Float.parseFloat(number1.getText().toString());
+                float b = Float.parseFloat(number2.getText().toString());
+                sol=a-b;
+                Toast.makeText(MainActivity.this, "Difference="+sol, Toast.LENGTH_SHORT).show();
+
             }
         });
-
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float a = Float.parseFloat(number1.getText().toString());
+                float b = Float.parseFloat(number2.getText().toString());
+                sol=a*b;
+                Toast.makeText(MainActivity.this, "Product="+sol, Toast.LENGTH_SHORT).show();
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float a = Float.parseFloat(number1.getText().toString());
+                float b = Float.parseFloat(number2.getText().toString());
+                sol=a/b;
+                Toast.makeText(MainActivity.this, "Quotient="+sol, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

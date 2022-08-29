@@ -2,37 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="Calculator"
+        android:gravity="center"/>
 
     <EditText
-        android:id="@+id/e1"
+        android:id="@+id/et1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="username"
-        android:inputType="e1" />
+        android:inputType="textPersonName"
+        android:hints="Enter first number"/>
 
     <EditText
-        android:id="@+id/e2"
+        android:id="@+id/et2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
-        android:hint="password"/>
+        android:inputType="textPersonName"
+        android:hints="Enter second number"/>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="307dp"
+        android:id="@+id/b11"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="+" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="316dp"
+        android:id="@+id/b12"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reset" />
+        android:text="-" />
+
+    <Button
+        android:id="@+id/b13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="*" />
+
+    <Button
+        android:id="@+id/b14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="/" />
 
 </LinearLayout>
