@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
                         pass.getText().toString().equals("admin")) {
                     Toast.makeText(getApplicationContext(), "Login Successfull", Toast.LENGTH_SHORT).show();
                 }
-                else if(user.getText().toString().equals("admin") &&
-                        pass.getText().toString().equals("admin")){
+                else{
                     Toast.makeText(getApplicationContext(), "Login Unsuccessfull", Toast.LENGTH_SHORT).show();
                 }
             }
